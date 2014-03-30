@@ -2,7 +2,7 @@ package kiloboltgame;
 
 import java.applet.Applet;
 
-public class StartingClass extends Applet {
+public class StartingClass extends Applet implements Runnable {
 
 	@Override
 	public void init() {
@@ -12,8 +12,8 @@ public class StartingClass extends Applet {
 
 	@Override
 	public void start() {
-		// TODO Auto-generated method stub
-		super.start();
+		Thread thread = new Thread(this);
+		thread.start();
 	}
 
 	@Override
@@ -26,6 +26,12 @@ public class StartingClass extends Applet {
 	public void destroy() {
 		// TODO Auto-generated method stub
 		super.destroy();
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
