@@ -3,10 +3,13 @@ package kiloboltgame;
 import java.applet.Applet;
 import java.awt.Color;
 import java.awt.Frame;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class StartingClass extends Applet implements Runnable {
+public class StartingClass extends Applet implements Runnable, KeyListener {
 
 	@Override
+	// when the applet run for first time, it will run the init() method
 	public void init() {
 
 		// sets applet size
@@ -15,6 +18,8 @@ public class StartingClass extends Applet implements Runnable {
 		setBackground(Color.BLACK);
 		// applet takes focus and the input goes directly into it
 		setFocusable(true);
+		// add KeyListener to current Applet
+		addKeyListener(this);
 		// assigns the applet window to the frame variable
 		Frame frame = (Frame) this.getParent().getParent();
 		// sets the title
@@ -22,6 +27,7 @@ public class StartingClass extends Applet implements Runnable {
 	}
 
 	@Override
+	// It is called automatically after the init() method
 	public void start() {
 		Thread thread = new Thread(this);
 		thread.start();
@@ -50,6 +56,24 @@ public class StartingClass extends Applet implements Runnable {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	@Override
+	public void keyPressed(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
