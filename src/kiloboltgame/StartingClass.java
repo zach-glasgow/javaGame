@@ -56,10 +56,10 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 	// It is called automatically after the init() method
 	public void start() {
 		bg1 = new Background(0, 0);
-		bg2 = new Background(2160, 0);
-		robot = new Robot();
 		hb = new Heliboy(340, 360);
 		hb2 = new Heliboy(700, 360);
+		bg2 = new Background(2160, 0);
+		robot = new Robot();
 		Thread thread = new Thread(this);
 		thread.start();
 	}
