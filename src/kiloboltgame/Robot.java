@@ -1,5 +1,7 @@
 package kiloboltgame;
 
+import java.util.ArrayList;
+
 public class Robot {
 	
 	// Constants are here
@@ -22,6 +24,9 @@ public class Robot {
 	// the rate at which X and Y position changes
 	private int speedX = 0;
 	private int speedY = 1;
+	
+	// store our Projectile objects
+	private ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 
 	// this method is called in each iteration of loop
 	public void update() {
@@ -111,6 +116,11 @@ public class Robot {
 		}
 	}
 	
+	public void shoot () {
+		Projectile p = new Projectile(centerX + 50, centerY - 25);
+		projectiles.add(p);
+	}
+	
 	public int getCenterX() {
 		return centerX;
 	}
@@ -129,6 +139,10 @@ public class Robot {
 
 	public int getSpeedY() {
 		return speedY;
+	}
+	
+	public ArrayList getProjectiles() {
+		return projectiles;
 	}
 
 	public void setCenterX(int centerX) {
